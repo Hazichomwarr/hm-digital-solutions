@@ -26,13 +26,13 @@ export default function ProjectsSection() {
             </p>
           </div>
 
-          <Link
+          {/* <Link
             href="/portfolio"
             className="inline-flex items-center gap-2 font-semibold text-blue-600 transition hover:gap-3"
           >
             View All Projects
             <ArrowRight className="h-4 w-4" />
-          </Link>
+          </Link> */}
         </div>
 
         {/* Projects Grid */}

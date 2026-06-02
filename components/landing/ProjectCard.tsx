@@ -6,11 +6,12 @@ type Project = {
   title: string;
   category: string;
   image: string;
+  url?: string;
 };
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="group cursor-pointer">
+    <a className="group cursor-pointer" href={project.url}>
       {/* Image */}
       <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm transition duration-300 hover:shadow-xl">
         <div className="relative aspect-4/3">
@@ -18,6 +19,8 @@ export default function ProjectCard({ project }: { project: Project }) {
             src={project.image}
             alt={project.title}
             fill
+            priority // Fixes the LCP "loading=eager" warning
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Fixes the missing sizes warning
             className="object-cover transition duration-500 group-hover:scale-105"
           />
         </div>
@@ -31,6 +34,6 @@ export default function ProjectCard({ project }: { project: Project }) {
 
         <p className="mt-1 text-sm text-slate-500">{project.category}</p>
       </div>
-    </div>
+    </a>
   );
 }

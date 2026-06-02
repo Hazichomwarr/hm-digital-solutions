@@ -4,30 +4,33 @@ export const projects = [
   {
     title: "Law Firm Website",
     category: "Web Design, Development",
-    image: "/projects/lawyer.jpg",
-  },
-
-  {
-    title: "Restaurant Website & Online Ordering",
-    category: "Web, Ordering System",
-    image: "/projects/restaurant.jpg",
+    image: "/images/hm_lawyer.png",
+    url: "https://youbi-mu.vercel.app/",
   },
 
   {
     title: "Business Automation Dashboard",
     category: "Automation, CRM, Workflow",
-    image: "/projects/dashboard.jpg",
+    image: "/images/hm_crm.png",
+    url: "https://relais-pipeline-rupr.vercel.app/admin",
+  },
+  {
+    title: "Restaurant Website & Online Ordering",
+    category: "Web, Ordering System",
+    image: "/images/hm_resto.png",
+    url: "https://didicuisine.vercel.app/",
   },
 
   {
     title: "RSVP Management System",
     category: "Web App, Events",
-    image: "/projects/rsvp.jpg",
+    image: "/images/hm_rsvp.png",
+    url: "https://touchpointapp.app",
   },
 
   {
     title: "Brand Identity & Print Design",
     category: "Branding, Print Materials",
-    image: "/projects/branding.jpg",
+    image: "/images/hm_design.png",
   },
 ];
