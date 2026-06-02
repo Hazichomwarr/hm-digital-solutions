@@ -37,9 +37,12 @@ export default function Navbar() {
         {/* Right Side */}
         <div className="flex items-center gap-4">
           {/* CTA */}
-          <button className="hidden rounded-xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-black transition hover:bg-emerald-400 lg:block">
+          <Link
+            href="/book-consultation"
+            className="hidden rounded-xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-black transition hover:bg-emerald-400 lg:block"
+          >
             Book Consultation
-          </button>
+          </Link>
 
           {/* Mobile Menu */}
           <button className="rounded-xl border border-slate-800 p-2 text-white lg:hidden">
