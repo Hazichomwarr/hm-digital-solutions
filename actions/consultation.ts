@@ -2,10 +2,7 @@
 
 "use server";
 
-import {
-  clientNotificationEmail,
-  getAdminEmail,
-} from "@/lib/emails/notification";
+import { clientNotificationEmail, getAdminEmail } from "@/emails/notification";
 import { resend } from "@/lib/resend";
 import { supabase } from "@/lib/supabase";
 import { consultationSchema } from "@/lib/validations/consultation";
