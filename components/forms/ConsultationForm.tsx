@@ -11,6 +11,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { submitConsultation } from "@/actions/consultation";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
+import { Loader2 } from "lucide-react";
 
 const BUSINESS_AREAS = [
   "Website Development",
@@ -28,7 +30,7 @@ export default function TestForm() {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<Consultation>({
     resolver: zodResolver(consultationSchema),
   });
@@ -36,20 +38,21 @@ export default function TestForm() {
   const router = useRouter();
 
   async function onSubmit(data: Consultation) {
-    const result = await submitConsultation(data);
+    try {
+      const result = await submitConsultation(data);
 
-    if (!result.success) {
-      const actionError = result.errors;
-      console.log("server error:", actionError);
+      if (!result.success) {
+        toast.error(result.message ?? "Failed to submit.");
+        return;
+      }
+      toast.success("Consultation submitted successfully.");
 
-      return;
+      reset();
+
+      router.push("/thank-you");
+    } catch {
+      toast.error("Unexpected error occurred.");
     }
-
-    // Reset the form fileds
-    reset();
-
-    // Redirect to /thank-you
-    router.push("/thank-you");
   }
   return (
     <form
@@ -177,9 +180,17 @@ export default function TestForm() {
       {/* CTA */}
       <button
         type="submit"
+        disabled={isSubmitting}
         className="w-full rounded-xl bg-emerald-500 px-6 py-4 text-lg font-semibold text-black transition cursor-pointer hover:bg-emerald-400"
       >
-        Schedule My Consultation
+        {isSubmitting ? (
+          <span className="flex items-center justify-center gap-2">
+            <Loader2 className="h-5 w-5 animate-spin" />
+            Submitting...
+          </span>
+        ) : (
+          "Schedule My Consultation"
+        )}
       </button>
     </form>
   );
