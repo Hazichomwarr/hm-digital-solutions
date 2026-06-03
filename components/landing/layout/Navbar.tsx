@@ -4,6 +4,7 @@
 
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
@@ -11,8 +12,15 @@ export default function Navbar() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          {/* Fake Logo Icon */}
-          <div className="h-10 w-10 rounded-xl bg-linear-to-br from-blue-600 to-emerald-500" />
+          {/* Fake Logo Icon
+          <div className="h-10 w-10 rounded-xl bg-linear-to-br from-blue-600 to-emerald-500" /> */}
+          <Image
+            src="/logo.jpg"
+            alt="logo"
+            height={50}
+            width={50}
+            className="w-auto"
+          />
 
           <div>
             <h2 className="text-lg font-bold text-white">HM Digital</h2>
