@@ -1,3 +1,4 @@
+//components/landing/layout/footerNewsletter.tsx
 import { Send } from "lucide-react";
 
 export default function FooterNewsletter() {
