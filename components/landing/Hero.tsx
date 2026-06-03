@@ -1,5 +1,6 @@
 // components/landing/Hero.tsx
 
+import Link from "next/link";
 import DashboardPreview from "./DashboardPreview";
 
 export default function Hero() {
@@ -32,13 +33,17 @@ export default function Hero() {
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-4">
-            <button className="rounded-xl bg-emerald-500 px-6 py-3 font-medium text-black transition hover:bg-emerald-400">
-              Book a Consultation
-            </button>
+            <Link href="/book-consultation">
+              <button className="rounded-xl bg-emerald-500 px-6 py-3 font-medium text-black transition cursor-pointer hover:bg-emerald-400">
+                Book a Consultation
+              </button>
+            </Link>
 
-            <button className="rounded-xl border border-slate-700 px-6 py-3 font-medium text-white transition hover:border-slate-500">
-              Explore Services
-            </button>
+            <Link href="/services">
+              <button className="rounded-xl border border-slate-700 px-6 py-3 font-medium text-white transition cursor-pointer hover:border-slate-500">
+                Explore Services
+              </button>
+            </Link>
           </div>
 
           {/* Trust Indicators */}
