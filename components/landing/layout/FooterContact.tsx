@@ -1,5 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
-import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
+// import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 
 export default function FooterContact() {
   return (
@@ -14,17 +14,17 @@ export default function FooterContact() {
 
         <li className="flex items-start gap-3">
           <Phone className="mt-1 h-5 w-5 text-emerald-400" />
-          (862) 123-4567
+          (929) 453-7790
         </li>
 
         <li className="flex items-start gap-3">
           <Mail className="mt-1 h-5 w-5 text-emerald-400" />
-          hello@hmdigitalsolutions.tech
+          contact@hm-digitalsolutions.com
         </li>
       </ul>
 
       {/* Socials */}
-      <div className="mt-8 flex gap-4">
+      {/* <div className="mt-8 flex gap-4">
         <button className="rounded-xl border border-slate-800 p-3 text-slate-400 transition hover:border-slate-600 hover:text-white cursor-pointer">
           <FaLinkedinIn className="h-5 w-5" />
         </button>
@@ -36,7 +36,7 @@ export default function FooterContact() {
         <button className="rounded-xl border border-slate-800 p-3 text-slate-400 transition hover:border-slate-600 hover:text-white cursor-pointer">
           <FaFacebook className="h-5 w-5" />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

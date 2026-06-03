@@ -5,6 +5,7 @@
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import Image from "next/image";
+import { NAV_LINKS } from "@/lib/constants/nav";
 
 export default function Navbar() {
   return (
@@ -31,13 +32,13 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-10 lg:flex">
-          {["Home", "Services", "Portfolio", "About", "Contact"].map((item) => (
+          {NAV_LINKS.map((item) => (
             <Link
-              key={item}
-              href={`/${item.toLowerCase()}`}
+              key={item.title}
+              href={item.link}
               className="text-sm font-medium text-slate-300 transition hover:text-white"
             >
-              {item}
+              {item.title}
             </Link>
           ))}
         </nav>
