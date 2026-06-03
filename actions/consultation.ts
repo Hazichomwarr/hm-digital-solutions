@@ -4,7 +4,7 @@
 
 import { clientNotificationEmail, getAdminEmail } from "@/emails/notification";
 import { resend } from "@/lib/resend";
-import { supabase } from "@/lib/supabase";
+import { supabaseAdmin } from "@/lib/supabase-admin";
 import { consultationSchema } from "@/lib/validations/consultation";
 
 export async function submitConsultation(data: unknown) {
@@ -20,7 +20,7 @@ export async function submitConsultation(data: unknown) {
 
     // Persit to DB
     const consultation = result.data;
-    const { error } = await supabase.from("consultations").insert({
+    const { error } = await supabaseAdmin.from("consultations").insert({
       full_name: consultation.fullName,
       business_name: consultation.businessName,
       email: consultation.email,

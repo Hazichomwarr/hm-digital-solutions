@@ -1,6 +1,6 @@
 // components/landing/ServicesSection.tsx
 
-import { services } from "@/lib/constants/services";
+import { landingServices } from "@/lib/constants/services";
 import ServiceCard from "./ServiceCard";
 
 export default function ServicesSection() {
@@ -25,7 +25,7 @@ export default function ServicesSection() {
 
         {/* Cards */}
         <div className="mt-16 grid gap-8 lg:grid-cols-3">
-          {services.map((service) => (
+          {landingServices.map((service) => (
             <ServiceCard key={service.title} service={service} />
           ))}
         </div>
