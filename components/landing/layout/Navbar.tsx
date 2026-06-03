@@ -48,15 +48,15 @@ export default function Navbar() {
           {/* CTA */}
           <Link
             href="/book-consultation"
-            className="hidden rounded-xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-black transition hover:bg-emerald-400 lg:block"
+            className="rounded-xl bg-emerald-500 px-3 py-3 text-xs font-semibold text-black transition hover:bg-emerald-400 lg:block"
           >
             Book Consultation
           </Link>
 
           {/* Mobile Menu */}
-          <button className="rounded-xl border border-slate-800 p-2 text-white lg:hidden">
+          {/* <button className="rounded-xl border border-slate-800 p-2 text-white lg:hidden">
             <Menu className="h-6 w-6" />
-          </button>
+          </button> */}
         </div>
       </div>
     </header>

@@ -1,7 +1,7 @@
 // components/landing/ProjectsSection.tsx
 
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+// import Link from "next/link";
+// import { ArrowRight } from "lucide-react";
 import { projects } from "@/lib/constants/projects";
 import ProjectCard from "./ProjectCard";
 
@@ -21,8 +21,8 @@ export default function ProjectsSection() {
             </h2>
 
             <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
-              A glimpse of the businesses we’ve helped transform through
-              websites, systems, automation, and branding.
+              A selection of projects showcasing our expertise in web
+              development, automation, and business technology solutions.
             </p>
           </div>
 
@@ -36,7 +36,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* Projects Grid */}
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="p-6 mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}

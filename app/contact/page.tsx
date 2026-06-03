@@ -19,6 +19,10 @@ export default function ContactPage() {
             Whether you need a website, automation, technical support, or
             business technology guidance, we are here to help.
           </p>
+
+          <div className="mt-6 text-emerald-500 hover:underline">
+            <a href="tel:+9294537790"> 📞 Call Now</a>
+          </div>
         </div>
       </section>
 
