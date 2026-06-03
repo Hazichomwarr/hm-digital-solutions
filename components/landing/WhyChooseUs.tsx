@@ -2,13 +2,14 @@
 
 import { features } from "@/lib/constants/features";
 import FeatureItem from "./FeatureItem";
+import Link from "next/link";
 
 export default function WhyChooseUs() {
   return (
     <section className="bg-slate-50 py-24">
-      <div className="mx-auto max-w-7xl flex gap-16 lg:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col gap-16 px-6 lg:flex-row lg:px-8">
         {/* LEFT CONTENT */}
-        <div className="max-w-xl">
+        <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-widest text-emerald-600">
             Why Choose Us
           </p>
@@ -25,13 +26,15 @@ export default function WhyChooseUs() {
             systems.
           </p>
 
-          <button className="mt-8 rounded-xl border border-slate-300 bg-white px-6 py-3 font-medium text-slate-900 transition hover:border-slate-400 hover:shadow-md">
-            About Us →
-          </button>
+          <Link href="/contact">
+            <button className="mt-8 rounded-xl border border-slate-300 bg-white px-6 py-3 font-medium text-slate-900 cursor-pointer transition hover:border-slate-400 hover:shadow-md">
+              Request a service →
+            </button>
+          </Link>
         </div>
 
         {/* RIGHT GRID */}
-        <div className="grid gap-8 sm:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {features.map((feature) => (
             <FeatureItem key={feature.title} feature={feature} />
           ))}
