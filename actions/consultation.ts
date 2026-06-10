@@ -60,3 +60,17 @@ export async function submitConsultation(data: unknown) {
     return { success: false, errors: "Unexpected server error." };
   }
 }
+
+export async function getConsultations() {
+  const { data, error } = await supabaseAdmin
+    .from("consultations")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.log("error:", error);
+    return [];
+  }
+
+  return data;
+}
