@@ -1,14 +1,20 @@
 import { getConsultations } from "@/actions/consultation";
+import Link from "next/link";
 
 export default async function AdminPage() {
   const consultations = await getConsultations();
 
   return (
-    <main className="min-h-screen bg-slate-50">
+    <section className="min-h-screen bg-slate-50">
       <div className="mx-auto max-w-7xl px-6 py-12">
         <h1 className="text-4xl font-bold">Consultation Leads</h1>
 
-        <p className="mt-2 text-slate-600">{consultations.length} leads</p>
+        <div className="mx-2 flex justify-between">
+          <p className="mt-2 text-slate-600">{consultations.length} leads</p>
+          <Link href="/" className="hover:underline cursor-pointer">
+            Home
+          </Link>
+        </div>
 
         {/* Table */}
         <div className="mt-10 overflow-hidden rounded-2xl border bg-white">
@@ -47,6 +53,6 @@ export default async function AdminPage() {
           </table>
         </div>
       </div>
-    </main>
+    </section>
   );
 }
