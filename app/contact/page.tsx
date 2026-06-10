@@ -150,13 +150,20 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <Link
-            href="/book-consultation"
-            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-black transition hover:bg-emerald-400"
-          >
-            Request Consultation
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+          <div className="flex flex-col items-center gap-2 md:flex-row">
+            <Link
+              href="/book-consultation"
+              className="w-full rounded-xl bg-emerald-500 px-6 py-2 font-semibold text-black transition hover:bg-emerald-400 text-center"
+            >
+              Request Consultation
+            </Link>
+            <Link
+              href="/"
+              className="w-full rounded-xl border border-neutral-300 px-3 py-2 font-semibold text-black transition hover:bg-neutral-200 text-center"
+            >
+              Home
+            </Link>
+          </div>
         </div>
       </section>
     </div>

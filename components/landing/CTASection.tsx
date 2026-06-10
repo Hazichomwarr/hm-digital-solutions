@@ -2,6 +2,7 @@
 
 import { ctaFeatures } from "@/lib/constants/ctaFeatures";
 import CTAFeature from "./CTAFeature";
+import Link from "next/link";
 
 export default function CTASection() {
   return (
@@ -26,13 +27,17 @@ export default function CTASection() {
 
           {/* Buttons */}
           <div className="mt-10 flex flex-wrap gap-4">
-            <button className="rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-black transition hover:bg-emerald-400">
-              Book a Consultation →
-            </button>
+            <Link href="/book-consultation">
+              <button className="rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-black transition hover:bg-emerald-400 cursor-pointer">
+                Book a Consultation →
+              </button>
+            </Link>
 
-            <button className="rounded-xl border border-slate-700 px-6 py-3 font-semibold text-white transition hover:border-slate-500">
-              Contact Us
-            </button>
+            <Link href="/contact">
+              <button className="rounded-xl border border-slate-700 px-6 py-3 font-semibold text-white transition hover:border-slate-500 cursor-pointer">
+                Contact Us
+              </button>
+            </Link>
           </div>
         </div>
 
